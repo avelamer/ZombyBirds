@@ -21,9 +21,10 @@ public class Zombie : MonoBehaviour {
 
     [SerializeField] Transform prefabExlosion;
 
+    [SerializeField] AudioSource sonidoExplosion;
 	void Start () {
        
-
+        GameConfig.ArrancaJuego ();
        
         marcadorPuntos.text = "Score: 0";
 
@@ -53,9 +54,13 @@ public class Zombie : MonoBehaviour {
     }
     void OnCollisionEnter(Collision explosion) {
         
+
+
         Instantiate (prefabExlosion, transform.position, Quaternion.identity);
 
         muerto = true;
+
+        GameConfig.PararJuego ();
 
         Invoke ("Destruccion", 0.4f) ;
     }
@@ -75,9 +80,6 @@ public class Zombie : MonoBehaviour {
 
 
 
-    
-          
-    
 
 }
 

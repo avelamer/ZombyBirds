@@ -27,7 +27,11 @@ int PosicionDestroyTuberia = -20;
 
     void Update () {
 
-        transform.Translate(Vector3.left * Time.deltaTime* velocidad);
+        if (GameConfig.IsPlaying()) {
+
+         transform.Translate(Vector3.left * Time.deltaTime* velocidad);
+
+        }
 
         if (transform.position.x < PosicionDestroyTuberia){
 

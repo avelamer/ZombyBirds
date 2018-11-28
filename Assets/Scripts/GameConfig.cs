@@ -1,16 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿public class GameConfig {
+public static bool jugando;
+	public static bool IsPlaying () {
 
-public class GameConfig : MonoBehaviour {
+		return jugando;
 
-	// Use this for initialization
-	void Start () {
-		
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
+	public static void ArrancaJuego () {
+
+		jugando = true;
+
 	}
+
+	public static void PararJuego (){
+
+		jugando = false;
+
+	}
+
+
+
+
+
 }
