@@ -22,6 +22,8 @@ public class Zombie : MonoBehaviour {
     [SerializeField] Transform prefabExlosion;
 
     [SerializeField] AudioSource sonidoExplosion;
+
+    [SerializeField] AudioSource sonidoPuntuacion;
 	void Start () {
        
         GameConfig.ArrancaJuego ();
@@ -44,7 +46,11 @@ public class Zombie : MonoBehaviour {
     }
     void OnTriggerEnter (Collider colisionador){
        
+        sonidoPuntuacion.Play ();
+
        puntos = puntos + 1;
+
+        GameControler.StorePuntos(puntos);
 
       ActualizarMarcador();
 
@@ -55,6 +61,8 @@ public class Zombie : MonoBehaviour {
     void OnCollisionEnter(Collision explosion) {
         
 
+        sonidoExplosion.Play ();
+        
 
         Instantiate (prefabExlosion, transform.position, Quaternion.identity);
 
@@ -78,8 +86,15 @@ public class Zombie : MonoBehaviour {
 
     }
 
+   public void desctivarMusica () {
 
 
+    }
+
+  public void desactivarEfectos () {
+
+      
+  }
 
 }
 

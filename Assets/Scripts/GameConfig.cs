@@ -1,5 +1,6 @@
 ﻿public class GameConfig {
 public static bool jugando;
+
 	public static bool IsPlaying () {
 
 		return jugando;
@@ -17,6 +18,7 @@ public static bool jugando;
 		jugando = false;
 
 	}
+
 
 
 
