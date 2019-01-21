@@ -30,7 +30,7 @@ int PosicionDestroyTuberia = -20;
         if (GameConfig.IsPlaying()) {
 
          transform.Translate(Vector3.left * Time.deltaTime* velocidad);
-
+        print("TAG TUBERIA "+gameObject.tag);
         }
 
         if (transform.position.x < PosicionDestroyTuberia){

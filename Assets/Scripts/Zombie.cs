@@ -59,18 +59,24 @@ public class Zombie : MonoBehaviour {
   
     }
     void OnCollisionEnter(Collision explosion) {
-        
+        // CHOCO CON LA TUBERIA
+        if(explosion.gameObject.tag == "Tuberia"){
+            sonidoExplosion.Play ();
+    
+            Instantiate (prefabExlosion, transform.position, Quaternion.identity);
 
-        sonidoExplosion.Play ();
-        
+             muerto = true;
 
-        Instantiate (prefabExlosion, transform.position, Quaternion.identity);
+             GameConfig.PararJuego ();
 
-        muerto = true;
+            Invoke ("Destruccion", 0.4f) ;
+        }
+        else  if(explosion.gameObject.tag == "Azul"){
 
-        GameConfig.PararJuego ();
+        }
+        else  if(explosion.gameObject.tag == "Verde"){
 
-        Invoke ("Destruccion", 0.4f) ;
+        }
     }
 
     void ActualizarMarcador () {  
